@@ -17,5 +17,7 @@ public interface EditorMapper {
 
     List<EditorResponseTo> getListResponseTo(Iterable<Editor> editors);
     
-    //finish methods for backward transform from DTO to Editor
+    Editor getEditor(EditorRequestTo editorRequestTo);
+
+    List<Editor> getEditors(Iterable<EditorRequestTo> editorRequestTos);
 }

@@ -14,9 +14,9 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 public class EditorService implements RestService<EditorRequestTo, EditorResponseTo> {
-    private final EditorRepository editorRepository;
+    private EditorRepository editorRepository;
     
-    private final EditorMapper editorMapper;
+    private EditorMapper editorMapper;
 
     @Override
     public List<EditorResponseTo> findAll() {
@@ -29,8 +29,11 @@ public class EditorService implements RestService<EditorRequestTo, EditorRespons
     }
 
     @Override
-    public EditorResponseTo create(EditorRequestTo userTo) {
-        return null;
+    public EditorResponseTo create(EditorRequestTo editorTo) {
+        return editorRepository
+                .save(editorMapper.getEditor(editorTo))
+                .map(editorMapper::getResponseTo)
+                .orElseThrow();
     }
 
     @Override

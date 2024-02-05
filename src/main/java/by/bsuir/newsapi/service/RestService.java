@@ -7,9 +7,9 @@ public interface RestService<Q, A> {
     
     A findById(Long id);
     
-    A create(Q userTo);
+    A create(Q editorTo);
     
-    A update(Q userTo);
+    A update(Q editorTo);
     
     boolean removeById(Long id);
 }
