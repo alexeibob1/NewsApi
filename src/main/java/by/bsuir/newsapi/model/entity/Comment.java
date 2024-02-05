@@ -1,4 +1,4 @@
-package by.bsuir.newsapi.model.impl;
+package by.bsuir.newsapi.model.entity;
 
 import by.bsuir.newsapi.model.AbstractEntity;
 import lombok.Builder;
@@ -8,6 +8,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class Tag extends AbstractEntity {
-    private String text;
+public class Comment extends AbstractEntity {
+    private News news;
+    
+    private String content;
 }

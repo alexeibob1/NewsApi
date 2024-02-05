@@ -1,4 +1,4 @@
-package by.bsuir.newsapi.model.impl;
+package by.bsuir.newsapi.model.entity;
 
 import by.bsuir.newsapi.model.AbstractEntity;
 import lombok.Builder;
