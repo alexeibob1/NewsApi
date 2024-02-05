@@ -1,12 +1,14 @@
 package by.bsuir.newsapi.dao.common;
 
 import by.bsuir.newsapi.model.AbstractEntity;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 
+@Repository
 public abstract class MemoryRepository<T extends AbstractEntity> implements CrudRepository<Long, T> {
     private final static AtomicLong ids = new AtomicLong();
     
@@ -27,13 +29,6 @@ public abstract class MemoryRepository<T extends AbstractEntity> implements Crud
         long id = ids.incrementAndGet();
         entity.setId(id);
         map.put(id, entity);
-        return Optional.of(entity);
-    }
-
-    @Override
-    public Optional<T> update(T entity) {
-        long id = entity.getId();
-        map.replace(id, entity);
         return Optional.of(entity);
     }
 
