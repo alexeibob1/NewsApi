@@ -5,6 +5,7 @@ import by.bsuir.newsapi.model.response.EditorResponseTo;
 import by.bsuir.newsapi.service.EditorService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,6 +16,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 public class EditorController {
+    @Autowired
     private EditorService editorService;
     
     @GetMapping

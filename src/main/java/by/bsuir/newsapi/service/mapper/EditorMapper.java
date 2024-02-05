@@ -4,6 +4,7 @@ import by.bsuir.newsapi.model.entity.Editor;
 import by.bsuir.newsapi.model.request.EditorRequestTo;
 import by.bsuir.newsapi.model.response.EditorResponseTo;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 import java.util.List;
 
