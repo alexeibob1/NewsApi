@@ -9,7 +9,7 @@ import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Repository
-public abstract class MemoryRepository<T extends AbstractEntity> implements CrudRepository<Long, T> {
+public abstract class AbstractMemoryRepository<T extends AbstractEntity> implements CrudRepository<Long, T> {
     private final static AtomicLong ids = new AtomicLong();
     
     protected final Map<Long, T> map = new HashMap<>();
