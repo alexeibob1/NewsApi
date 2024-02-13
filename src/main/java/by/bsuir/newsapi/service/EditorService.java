@@ -6,6 +6,8 @@ import by.bsuir.newsapi.model.response.EditorResponseTo;
 import by.bsuir.newsapi.service.mapper.EditorMapper;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,13 +15,11 @@ import java.util.List;
 
 @Service
 @Data
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class EditorService implements RestService<EditorRequestTo, EditorResponseTo> {
-    @Autowired
-    private EditorRepository editorRepository;
+    private final EditorRepository editorRepository;
 
-    @Autowired
-    private EditorMapper editorMapper;
+    private final EditorMapper editorMapper;
 
     @Override
     public List<EditorResponseTo> findAll() {
