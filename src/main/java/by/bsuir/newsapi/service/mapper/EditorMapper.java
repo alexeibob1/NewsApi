@@ -17,7 +17,8 @@ public interface EditorMapper {
     EditorResponseTo getResponseTo(Editor editor);
 
     List<EditorResponseTo> getListResponseTo(Iterable<Editor> editors);
-    
+
+    @Mapping(source = "id", target = "id")
     Editor getEditor(EditorRequestTo editorRequestTo);
 
     List<Editor> getEditors(Iterable<EditorRequestTo> editorRequestTos);

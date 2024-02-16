@@ -1,8 +1,9 @@
 package by.bsuir.newsapi.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Builder;
+import lombok.experimental.SuperBuilder;
 
+@SuperBuilder
 public abstract class AbstractEntity implements Entity {
     private Long id;
     

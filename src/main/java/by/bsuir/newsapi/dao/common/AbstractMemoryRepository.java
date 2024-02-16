@@ -33,7 +33,12 @@ public abstract class AbstractMemoryRepository<T extends AbstractEntity> impleme
     }
 
     @Override
-    public boolean delete(T entity) {
+    public boolean remove(T entity) {
         return map.remove(entity.getId(), entity);
+    }
+
+    @Override
+    public boolean removeById(Long id) {
+        return map.remove(id, map.get(id));
     }
 }

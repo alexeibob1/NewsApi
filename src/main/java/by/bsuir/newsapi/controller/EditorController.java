@@ -3,6 +3,7 @@ package by.bsuir.newsapi.controller;
 import by.bsuir.newsapi.model.request.EditorRequestTo;
 import by.bsuir.newsapi.model.response.EditorResponseTo;
 import by.bsuir.newsapi.service.EditorService;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -27,7 +28,25 @@ public class EditorController {
     
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public EditorResponseTo create(@RequestBody EditorRequestTo dto) {
+    public EditorResponseTo create(@Valid @RequestBody EditorRequestTo dto) {
         return editorService.create(dto);
+    }
+
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public EditorResponseTo get(@Valid @PathVariable("id") Long id) {
+        return editorService.findById(id);
+    }
+
+    @PutMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public EditorResponseTo update(@Valid @RequestBody EditorRequestTo dto) {
+        return editorService.update(dto);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@Valid @PathVariable("id") Long id) {
+        editorService.removeById(id);
     }
 }
