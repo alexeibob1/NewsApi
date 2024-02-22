@@ -39,7 +39,7 @@ public class EditorController {
     }
 
     @PutMapping
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.OK)
     public EditorResponseTo update(@Valid @RequestBody EditorRequestTo dto) {
         return editorService.update(dto);
     }

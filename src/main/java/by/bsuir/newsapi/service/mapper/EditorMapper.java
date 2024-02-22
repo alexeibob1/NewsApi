@@ -14,10 +14,16 @@ public interface EditorMapper {
     
     List<EditorRequestTo> getListRequestTo(Iterable<Editor> editors);
 
+    @Mapping(source = "firstName", target = "firstname")
+    @Mapping(source = "lastName", target = "lastname")
     EditorResponseTo getResponseTo(Editor editor);
 
+    @Mapping(source = "firstName", target = "firstname")
+    @Mapping(source = "lastName", target = "lastname")
     List<EditorResponseTo> getListResponseTo(Iterable<Editor> editors);
 
+    @Mapping(source = "firstname", target = "firstName")
+    @Mapping(source = "lastname", target = "lastName")
     @Mapping(source = "id", target = "id")
     Editor getEditor(EditorRequestTo editorRequestTo);
 
