@@ -45,8 +45,8 @@ public class EditorService implements RestService<EditorRequestTo, EditorRespons
     @Override
     public EditorResponseTo update(EditorRequestTo editorTo) {
         editorRepository
-                .getBy(editorTo.id())
-                .orElseThrow(() -> editorNotFoundException(editorTo.id()));
+                .getBy(editorMapper.getEditor(editorTo).getId())
+                .orElseThrow(() -> editorNotFoundException(editorMapper.getEditor(editorTo).getId()));
         return editorRepository
                 .update(editorMapper.getEditor(editorTo))
                 .map(editorMapper::getResponseTo)

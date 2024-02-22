@@ -24,7 +24,6 @@ public interface EditorMapper {
 
     @Mapping(source = "firstname", target = "firstName")
     @Mapping(source = "lastname", target = "lastName")
-    @Mapping(source = "id", target = "id")
     Editor getEditor(EditorRequestTo editorRequestTo);
 
     List<Editor> getEditors(Iterable<EditorRequestTo> editorRequestTos);
