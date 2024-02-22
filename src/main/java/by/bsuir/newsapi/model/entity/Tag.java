@@ -10,5 +10,5 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @SuperBuilder
 public class Tag extends AbstractEntity {
-    private String text;
+    private String name;
 }
