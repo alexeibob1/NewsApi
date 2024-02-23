@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 @Getter
@@ -18,7 +20,7 @@ public class News extends AbstractEntity {
     
     private String context;
     
-    private LocalDateTime created;
+    private Timestamp created;
     
-    private LocalDateTime modified;
+    private Timestamp modified;
 }
