@@ -8,9 +8,5 @@ import java.util.Optional;
 
 @Repository
 public class EditorRepository extends AbstractMemoryRepository<Editor> {
-    @Override
-    public Optional<Editor> update(Editor entity) {
-        map.put(entity.getId(), entity);
-        return Optional.of(entity);
-    }
+
 }

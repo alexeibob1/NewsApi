@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @Repository
 public abstract class AbstractMemoryRepository<T extends AbstractEntity> implements CrudRepository<Long, T> {
-    private final static AtomicLong ids = new AtomicLong();
+    private final AtomicLong ids = new AtomicLong();
     
     protected final Map<Long, T> map = new HashMap<>();
     
@@ -40,5 +40,11 @@ public abstract class AbstractMemoryRepository<T extends AbstractEntity> impleme
     @Override
     public boolean removeById(Long id) {
         return map.remove(id, map.get(id));
+    }
+
+    @Override
+    public Optional<T> update(T entity) {
+        map.put(entity.getId(), entity);
+        return Optional.of(entity);
     }
 }

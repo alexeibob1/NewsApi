@@ -8,8 +8,5 @@ import java.util.Optional;
 
 @Repository
 public class CommentRepository extends AbstractMemoryRepository<Comment> {
-    @Override
-    public Optional<Comment> update(Comment entity) {
-        return Optional.empty();
-    }
+
 }

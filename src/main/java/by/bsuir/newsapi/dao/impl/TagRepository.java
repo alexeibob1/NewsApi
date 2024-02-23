@@ -8,8 +8,5 @@ import java.util.Optional;
 
 @Repository
 public class TagRepository extends AbstractMemoryRepository<Tag> {
-    @Override
-    public Optional<Tag> update(Tag entity) {
-        return Optional.empty();
-    }
+
 }

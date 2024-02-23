@@ -9,8 +9,4 @@ import java.util.Optional;
 @Repository
 public class NewsRepository extends AbstractMemoryRepository<News> {
 
-    @Override
-    public Optional<News> update(News entity) {
-        return Optional.empty();
-    }
 }
