@@ -1,4 +1,7 @@
 package by.bsuir.newsapi.model.request;
 
-public record NewsRequestTo() {
-}
+public record NewsRequestTo(
+        EditorRequestTo editor,
+        String title,
+        String content
+) { }
