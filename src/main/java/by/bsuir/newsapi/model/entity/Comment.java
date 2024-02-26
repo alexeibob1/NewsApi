@@ -10,7 +10,7 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @SuperBuilder
 public class Comment extends AbstractEntity {
-    private News news;
+    private Long newsId;
     
     private String content;
 }
