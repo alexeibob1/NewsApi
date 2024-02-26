@@ -14,13 +14,13 @@ import java.time.LocalDateTime;
 @Setter
 @SuperBuilder
 public class News extends AbstractEntity {
-    private Editor editor;
+    private Long editorId;
     
     private String title;
     
-    private String context;
+    private String content;
     
-    private Timestamp created;
+    private LocalDateTime created;
     
-    private Timestamp modified;
+    private LocalDateTime modified;
 }

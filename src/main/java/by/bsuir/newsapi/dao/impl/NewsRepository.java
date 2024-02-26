@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public class NewsRepository extends AbstractMemoryRepository<News> {
-
+    
 }

@@ -1,11 +1,13 @@
 package by.bsuir.newsapi.model.response;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public record NewsResponseTo(
-        EditorResponseTo editor,
+        Long id,
+        Long editorId,
         String title,
         String content,
-        Timestamp created,
-        Timestamp modified
+        LocalDateTime created,
+        LocalDateTime modified
 ) {}

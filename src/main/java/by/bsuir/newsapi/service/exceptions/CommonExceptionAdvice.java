@@ -14,7 +14,7 @@ import java.util.List;
 
 @ControllerAdvice
 public class CommonExceptionAdvice {
-    @ExceptionHandler({ResourceNotFoundException.class})
+    @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<ErrorResponseTo> catchNotFoundException(ResourceNotFoundException e) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getError());
     }
